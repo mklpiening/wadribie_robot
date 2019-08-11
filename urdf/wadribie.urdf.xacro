@@ -11,7 +11,7 @@
 
   <link name="rplidar">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 ${- M_PI/2}" />
+      <origin xyz="0 0 -0.03" rpy="0 0 ${- M_PI/2}" />
       <geometry>
         <mesh filename="package://wadribie_robot/model/rplidar.stl"/>
       </geometry>
@@ -24,7 +24,7 @@
    <joint name="rplidar_to_base_joint" type="fixed">
     <child link="rplidar" />
     <parent link="base_link" />
-    <origin xyz="0 0 0.04" rpy="0 0 0" />
+    <origin xyz="0 0 0.07" rpy="0 0 0" />
   </joint>
 
 </robot>
