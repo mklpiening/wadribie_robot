@@ -9,7 +9,7 @@
 
   <xacro:include filename="$(find simplebot_driver)/urdf/simplebot.urdf.xacro" />
 
-  <link name="rplidar">
+  <link name="laser_link">
     <visual>
       <origin xyz="0 0 -0.03" rpy="0 0 ${- M_PI/2}" />
       <geometry>
@@ -22,7 +22,7 @@
   </link>
 
    <joint name="rplidar_to_base_joint" type="fixed">
-    <child link="rplidar" />
+    <child link="laser_link" />
     <parent link="base_link" />
     <origin xyz="0 0 0.07" rpy="0 0 0" />
   </joint>
