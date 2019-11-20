@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>wadribie_description</name>
+  <version>1.0.0</version>
+  <description>Model of the wadribie robot</description>
+
+  <maintainer email="mklpiening@uos.de">Malte kl. Piening</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>

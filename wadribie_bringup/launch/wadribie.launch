@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find wadribie_description)/urdf/wadribie.urdf.xacro'" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+    <node name="simplebot" pkg="simplebot_driver" type="simplebot" respawn="false" output="screen">
+        <param name="port" type="string" value="/dev/simplebot" />
+        <param name="baudrate" type="int" value="115200" />
+        <param name="max_speed" type="double" value="0.8" />
+        <param name="steps_per_rotation" type="int" value="90" />
+        <param name="wheel_radius" type="double" value="0.025" />
+        <param name="axis_length" type="double" value="0.18" />
+        <param name="turning_adaption" type="double" value="0.862" />
+    </node>
+
+    <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
+        <param name="serial_port" type="string" value="/dev/rplidar"/>
+        <param name="serial_baudrate" type="int" value="115200"/>
+        <param name="frame_id" type="string" value="laser_link"/>
+        <param name="inverted" type="bool" value="false"/>
+        <param name="angle_compensate" type="bool" value="true"/>
+        <param name="scan_mode" type="string" value="Standard" />
+    </node>
+</launch>
