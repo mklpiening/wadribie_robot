@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>wadribie_navigation</name>
+  <version>1.0.0</version>
+  <description>Navigation files for wadribie</description>
+
+  <maintainer email="malte@klpiening.com">Malte kl. Piening</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>
