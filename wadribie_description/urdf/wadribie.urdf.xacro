@@ -21,19 +21,11 @@
     </visual>
   </link>
 
-   <joint name="rplidar_to_base_joint" type="fixed">
+  <joint name="rplidar_to_base_joint" type="fixed">
     <child link="laser_link" />
     <parent link="base_link" />
     <origin xyz="0 0 0.07" rpy="0 0 0" />
   </joint>
-
-  <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
-    <frameName>odom_combined</frameName>
-    <bodyName>base_link</bodyName>
-    <topicName>odom</topicName>
-    <updateRate>20.0</updateRate>
-    <gaussianNoise>0.01</gaussianNoise>
-  </plugin>
 
   <gazebo reference="laser_link">
     <sensor name="rplidar" type="ray">
