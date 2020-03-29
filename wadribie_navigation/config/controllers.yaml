@@ -48,10 +48,10 @@ defaultController:
     eband_equilibrium_relative_overshoot: 0.15
     eband_significant_force_lower_bound: 0.15
     
-    costmap_weight: 7.5
-    bubble_velocity_multiplier: 1.5 # higher = faster
+    costmap_weight: 15.0
+    bubble_velocity_multiplier: 3.0 # higher = faster
     rotation_correction_threshold: 0.2
-    rotation_threshold_multiplier: 1.0
+    rotation_threshold_multiplier: 2.0
 
 dwa:
     # allowed movement
