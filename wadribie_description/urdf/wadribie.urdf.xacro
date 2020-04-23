@@ -9,6 +9,24 @@
 
   <xacro:include filename="$(find simplebot_driver)/urdf/simplebot.urdf.xacro" />
 
+  <link name="imu">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.02 0.005"/>
+      </geometry>
+      <material name="darkblue" >
+        <color rgba="0.0 0.0 0.5 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="imu_to_base_joint" type="fixed">
+    <child link="imu" />
+    <parent link="base_link" />
+    <origin xyz="0 0 0.02" rpy="0 0 0" />
+  </joint>
+
   <link name="laser_link">
     <visual>
       <origin xyz="0 0 -0.03" rpy="0 0 ${- M_PI/2}" />
@@ -21,7 +39,7 @@
     </visual>
   </link>
 
-  <joint name="rplidar_to_base_joint" type="fixed">
+  <joint name="laser_to_base_joint" type="fixed">
     <child link="laser_link" />
     <parent link="base_link" />
     <origin xyz="0 0 0.07" rpy="0 0 0" />
