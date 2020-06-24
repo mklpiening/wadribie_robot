@@ -7,11 +7,14 @@
     <node name="simplebot" pkg="simplebot_driver" type="simplebot" respawn="false" output="screen">
         <param name="port" type="string" value="/dev/simplebot" />
         <param name="baudrate" type="int" value="115200" />
-        <param name="max_speed" type="double" value="0.5" />
+        <param name="max_speed" type="double" value="1.0" />
         <param name="wheel_radius" type="double" value="0.025" />
         <param name="axis_length" type="double" value="0.18" />
-        <param name="turning_adaption" type="double" value="0.79" />
+        <param name="turning_adaption" type="double" value="0.85" />
         <param name="publish_tf" value="false" />
+	<param name="pose_variance" type="double" value="1" />
+	<param name="twist_variance" type="double" value="10" />
+        <param name="publish_motor_stat" value="true" />
     </node>
 
     <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
